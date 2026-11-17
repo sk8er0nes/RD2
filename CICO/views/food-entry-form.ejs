@@ -1,0 +1,32 @@
+<div class="mb-3">
+  <label class="form-label" for="dateTime">Date and Time</label>
+  <input class="form-control" type="datetime-local" id="dateTime" name="dateTime" value="<%=
+    foodEntry?.dateTime?.replace(' ', 'T').slice(0, 16) %>">
+</div>
+<div class="mb-3">
+  <label class="form-label" for="foodName">Food Name</label>
+  <input class="form-control" type="text" id="foodName" name="foodName" value="<%= foodEntry?.foodName %>">
+</div>
+<div class="mb-3">
+  <label class="form-label" for="calories">Calories</label>
+  <input class="form-control" type="number" id="calories" name="calories" value="<%= foodEntry?.calories %>">
+</div>
+<div class="mb-3">
+  <label class="form-label" for="servingSize">Serving Size</label>
+  <input class="form-control" type="number" id="servingSize" name="servingSize" value="<%= foodEntry?.servingSize %>">
+  <label class="form-label" for="unit">Unit</label>
+  <select class="form-select" id="unit" name="unit">
+    <option value="serving"
+<%= foodEntry?.unit=="serving"?"selected" :""%>
+      >Serving</option>
+    <option value="gram"
+<%= foodEntry?.unit=="gram"?"selected" :""%>
+      >Gram</option>
+    <option value="ounce"
+<%= foodEntry?.unit=="ounce"?"selected" :""%>
+      >Ounce</option>
+    <option value="pound"
+<%= foodEntry?.unit=="pound"?"selected" :""%>
+      >Pound</option>
+  </select>
+</div>
