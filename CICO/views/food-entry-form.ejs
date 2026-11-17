@@ -30,3 +30,29 @@
       >Pound</option>
   </select>
 </div>
+<fieldset class="mb-3">
+  <legend class="fs-6">Meal</legend>
+  <% for (let m of meals) { %>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="meal"
+        id="meal-<%= m.id %>" value="<%= m.id %>" required
+<%= (foodEntry?.meal_id??1)== m.id?"checked" :""%>>
+      <label class="form-check-label" for="meal-<%= m.id %>">
+      <%= m.name %>
+    </label>
+    </div>
+  <% } %>
+</fieldset>
+<fieldset class="mb-3">
+  <legend class="fs-6">Tags</legend>
+  <% for (let t of tags) { %>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" name="tags[]"
+        id="tag-<%= t.id %>" value="<%= t.id %>"
+<%= relatedTags.includes(t.id)?"checked" :""%>>
+      <label class="form-check-label" for="tag-<%= t.id %>">
+      <%= t.name %>
+    </label>
+    </div>
+  <% } %>
+</fieldset>

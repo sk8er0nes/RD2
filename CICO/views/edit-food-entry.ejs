@@ -1,5 +1,10 @@
 <h1 class="mb-4">Edit Food Entry</h1>
 <form method="POST" class="card card-body">
-  <%- include("food-entry-form", { foodEntry: foodEntry }) %>
+  <%- include('food-entry-form', {
+  foodEntry: foodEntry,
+  meals: meals,
+  tags: tags,
+  relatedTags: relatedTags
+  }) %>
     <button type="submit" class="btn btn-primary mt-3">Update Food Entry</button>
   </form>
